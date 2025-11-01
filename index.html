@@ -1,11 +1,10 @@
-
 <!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sharad Jha – Portfolio</title>
+  <title>Sharad Jha</title>
 
   <!-- Fonts & Icons -->
   <link
@@ -151,6 +150,35 @@
       opacity: 1;
     }
 
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 101;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--accent);
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
     .hero {
       min-height: 100vh;
       display: grid;
@@ -258,7 +286,7 @@
     }
 
     section {
-      padding: 5rem 0;
+      padding: 3rem 0;
       position: relative;
       z-index: 1;
     }
@@ -549,33 +577,104 @@
       }
 
       .nav-links {
-        font-size: .85rem;
-        gap: .2rem;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: rgba(15, 19, 41, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 100px 2rem 2rem;
+        gap: 0;
+        border-left: 1px solid var(--card-border);
+        transition: right 0.4s ease;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .nav-links.active {
+        right: 0;
       }
 
       .nav-links a {
-        padding: .5rem .65rem;
+        padding: 1rem;
+        font-size: 1.1rem;
+        border-bottom: 1px solid var(--card-border);
+      }
+
+      .nav-links a::after {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      /* Mobile Hero Adjustments */
+      .hero {
+        padding-top: 5rem;
+        padding-bottom: 2rem;
+        min-height: auto;
       }
 
       h1 {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
+        line-height: 1.15;
+      }
+
+      .eyebrow {
+        font-size: .8rem;
+        padding: .4rem .7rem;
+        margin-bottom: 1rem;
+        word-wrap: break-word;
+        max-width: 100%;
+        line-height: 1.4;
       }
 
       .lead {
-        font-size: 1.05rem;
+        font-size: 1rem;
+      }
+
+      .cta-row {
+        gap: 0.8rem;
+      }
+
+      .btn {
+        padding: 0.85rem 1.3rem;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+
+      /* Mobile Code Card - Full Width */
+      .card {
+        padding: 1.2rem;
+        width: 100%;
+        margin: 0;
+      }
+
+      .card pre {
+        font-size: 0.85rem !important;
+        line-height: 1.7 !important;
+        white-space: pre;
+        overflow-x: auto;
+      }
+
+      /* Reduce spacing between sections on mobile */
+      section {
+        padding: 2.5rem 0;
+      }
+
+      .section-head {
+        margin-bottom: 1.5rem;
       }
 
       .section-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        margin-top: 0.5rem;
       }
 
       .section-head .tag {
         font-size: 0.95rem;
-      }
-
-      .hero {
-        padding-top: 6rem;
-        padding-bottom: 3rem;
       }
 
       .about-grid {
@@ -584,20 +683,7 @@
       }
 
       .project-card {
-        flex: 0 0 320px;
-      }
-
-      .btn {
-        padding: 0.85rem 1.5rem;
-        font-size: 0.95rem;
-      }
-
-      section {
-        padding: 3.5rem 0;
-      }
-
-      .card {
-        padding: 1.5rem;
+        flex: 0 0 300px;
       }
 
       .card-min {
@@ -611,8 +697,7 @@
 
     @media(max-width:480px) {
       .nav-inner {
-        padding: .4rem .8rem;
-        gap: .5rem;
+        padding: .5rem 1rem;
       }
 
       .brand .logo {
@@ -626,21 +711,25 @@
       }
 
       .nav-links {
-        font-size: .75rem;
-        gap: 0;
+        width: 250px;
       }
 
-      .nav-links a {
-        padding: .4rem .5rem;
+      /* Extra small mobile adjustments */
+      .hero {
+        padding-top: 4.5rem;
+        padding-bottom: 1.5rem;
       }
 
       h1 {
-        font-size: 1.9rem;
+        font-size: 1.85rem;
+        line-height: 1.2;
       }
 
       .eyebrow {
         font-size: .75rem;
-        padding: .35rem .7rem;
+        padding: .35rem .65rem;
+        line-height: 1.35;
+        margin-bottom: 0.8rem;
       }
 
       .lead {
@@ -650,49 +739,69 @@
 
       .cta-row {
         flex-direction: column;
-        gap: 0.8rem;
+        gap: 0.7rem;
       }
 
       .btn {
         width: 100%;
         justify-content: center;
-        padding: 0.8rem 1.2rem;
+        padding: 0.8rem 1rem;
         font-size: 0.9rem;
       }
 
+      /* Code card for small mobile */
+      .card {
+        padding: 1rem;
+        border-radius: 12px;
+      }
+
+      .card pre {
+        font-size: 0.8rem !important;
+        line-height: 1.6 !important;
+      }
+
       .section-title {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
+        line-height: 1.25;
       }
 
       .section-head .tag {
-        font-size: 0.85rem;
+        font-size: 0.88rem;
         letter-spacing: 1.5px;
       }
 
       .section-head p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+      }
+
+      section {
+        padding: 2rem 0;
+      }
+
+      .section-head {
+        margin-bottom: 1.2rem;
       }
 
       .project-card {
-        flex: 0 0 280px;
-        padding: 1.5rem;
+        flex: 0 0 260px;
+        padding: 1.3rem;
       }
 
       .project-card h3 {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
       }
 
       .project-card p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         min-height: auto;
       }
 
       .card-min h3 {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
       }
 
       .card-min p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
       }
 
       .icon-wrap {
@@ -702,32 +811,47 @@
       }
 
       .skill-pill {
-        padding: .7rem 1.2rem;
-        font-size: 0.85rem;
+        padding: .65rem 1.1rem;
+        font-size: 0.8rem;
       }
 
       .tag-pill {
-        font-size: .75rem;
-        padding: .35rem .7rem;
+        font-size: .72rem;
+        padding: .3rem .65rem;
       }
 
       .contact-buttons {
         flex-direction: column;
-        gap: 0.8rem;
-      }
-
-      section {
-        padding: 3rem 0;
+        gap: 0.7rem;
       }
 
       footer {
         padding: 2rem 1rem;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media(max-width:360px) {
+      h1 {
+        font-size: 1.6rem;
       }
 
-      pre {
-        font-size: .85rem !important;
-        overflow-x: auto;
+      .eyebrow {
+        font-size: 0.7rem;
+        padding: .3rem .55rem;
+      }
+
+      .lead {
+        font-size: 0.88rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .card pre {
+        font-size: 0.72rem !important;
+        line-height: 1.55 !important;
       }
     }
 
@@ -753,7 +877,12 @@
         <div class="logo">&lt;/&gt;</div>
         <div class="name">Sharad Jha</div>
       </div>
-      <div class="nav-links">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-links" id="navLinks">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Stack</a>
@@ -1057,6 +1186,36 @@ const me = {
           duration: 0.3
         });
       });
+    });
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function () {
+      // Hamburger Menu Toggle
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
+
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          hamburger.classList.toggle('active');
+          navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+          });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+          }
+        });
+      }
     });
 
     // Smooth scroll ONLY for links that are actually internal anchors
