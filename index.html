@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -66,7 +67,6 @@
       display: block
     }
 
-    /* Navigation */
     nav {
       position: fixed;
       top: 20px;
@@ -151,7 +151,6 @@
       opacity: 1;
     }
 
-    /* Hero Section */
     .hero {
       min-height: 100vh;
       display: grid;
@@ -258,7 +257,6 @@
       backdrop-filter: blur(10px);
     }
 
-    /* Sections */
     section {
       padding: 5rem 0;
       position: relative;
@@ -286,7 +284,6 @@
       letter-spacing: -0.02em;
     }
 
-    /* About */
     .about-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -336,7 +333,6 @@
       line-height: 1.6;
     }
 
-    /* Skills - Infinite Scroll */
     .skills-wrap {
       overflow: hidden;
       mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
@@ -382,7 +378,6 @@
       transform: scale(1.05);
     }
 
-    /* Projects - Infinite Scroll */
     .projects-wrap {
       overflow: hidden;
       mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
@@ -464,7 +459,6 @@
       font-weight: 600;
     }
 
-    /* Contact */
     .contact-center {
       text-align: center;
       max-width: 700px;
@@ -496,7 +490,6 @@
       border-top: 1px solid var(--card-border);
     }
 
-    /* Cursor */
     #cursor {
       position: fixed;
       left: 0;
@@ -512,7 +505,6 @@
       mix-blend-mode: screen;
     }
 
-    /* Responsive */
     @media(max-width:1024px) {
       .hero-grid {
         grid-template-columns: 1fr;
@@ -524,11 +516,16 @@
       }
 
       .about-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
       }
 
       .project-card {
-        flex: 0 0 360px;
+        flex: 0 0 380px;
+      }
+
+      section {
+        padding: 4rem 0;
       }
     }
 
@@ -544,31 +541,193 @@
       .brand .logo {
         width: 40px;
         height: 40px;
-      }
-
-      .nav-links {
-        font-size: .9rem;
-        gap: .3rem;
-      }
-
-      .nav-links a {
-        padding: .5rem .7rem;
-      }
-
-      h1 {
-        font-size: 2.2rem;
-      }
-
-      .lead {
         font-size: 1rem;
       }
 
+      .brand .name {
+        font-size: 0.95rem;
+      }
+
+      .nav-links {
+        font-size: .85rem;
+        gap: .2rem;
+      }
+
+      .nav-links a {
+        padding: .5rem .65rem;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+      }
+
+      .lead {
+        font-size: 1.05rem;
+      }
+
       .section-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
+      }
+
+      .section-head .tag {
+        font-size: 0.95rem;
       }
 
       .hero {
         padding-top: 6rem;
+        padding-bottom: 3rem;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .project-card {
+        flex: 0 0 320px;
+      }
+
+      .btn {
+        padding: 0.85rem 1.5rem;
+        font-size: 0.95rem;
+      }
+
+      section {
+        padding: 3.5rem 0;
+      }
+
+      .card {
+        padding: 1.5rem;
+      }
+
+      .card-min {
+        padding: 1.5rem;
+      }
+
+      #cursor {
+        display: none;
+      }
+    }
+
+    @media(max-width:480px) {
+      .nav-inner {
+        padding: .4rem .8rem;
+        gap: .5rem;
+      }
+
+      .brand .logo {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+      }
+
+      .brand .name {
+        font-size: 0.85rem;
+      }
+
+      .nav-links {
+        font-size: .75rem;
+        gap: 0;
+      }
+
+      .nav-links a {
+        padding: .4rem .5rem;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+
+      .eyebrow {
+        font-size: .75rem;
+        padding: .35rem .7rem;
+      }
+
+      .lead {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-row {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .section-head .tag {
+        font-size: 0.85rem;
+        letter-spacing: 1.5px;
+      }
+
+      .section-head p {
+        font-size: 1rem;
+      }
+
+      .project-card {
+        flex: 0 0 280px;
+        padding: 1.5rem;
+      }
+
+      .project-card h3 {
+        font-size: 1.2rem;
+      }
+
+      .project-card p {
+        font-size: 0.9rem;
+        min-height: auto;
+      }
+
+      .card-min h3 {
+        font-size: 1.2rem;
+      }
+
+      .card-min p {
+        font-size: 0.95rem;
+      }
+
+      .icon-wrap {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+      }
+
+      .skill-pill {
+        padding: .7rem 1.2rem;
+        font-size: 0.85rem;
+      }
+
+      .tag-pill {
+        font-size: .75rem;
+        padding: .35rem .7rem;
+      }
+
+      .contact-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      section {
+        padding: 3rem 0;
+      }
+
+      footer {
+        padding: 2rem 1rem;
+        font-size: 0.9rem;
+      }
+
+      pre {
+        font-size: .85rem !important;
+        overflow-x: auto;
       }
     }
 
@@ -682,7 +841,6 @@ const me = {
         <div class="skill-pill">Tailwind CSS</div>
         <div class="skill-pill">MongoDB</div>
         <div class="skill-pill">Git</div>
-        <!-- Duplicated for seamless loop -->
         <div class="skill-pill">HTML</div>
         <div class="skill-pill">CSS</div>
         <div class="skill-pill">JavaScript</div>
@@ -709,6 +867,47 @@ const me = {
     </div>
     <div class="projects-wrap">
       <div class="projects-line">
+        <div class="project-card">
+          <h3><a href="https://github.com/sharad01-ops/FoodIngo" target="_blank">FoodIngo</a></h3>
+          <p>A full-stack food delivery platform offering secure ordering, real-time tracking, and a modern responsive
+            interface for seamless user experience.</p>
+          <div class="project-tags">
+            <div class="tag-pill">React.js</div>
+            <div class="tag-pill">Node.js</div>
+            <div class="tag-pill">MongoDB</div>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3><a href="https://github.com/sharad01-ops/Meal_Project" target="_blank">Meal Project</a></h3>
+          <p>Interactive React-based meal browser allowing users to explore and filter recipes with an intuitive,
+            responsive UI and component-driven architecture.</p>
+          <div class="project-tags">
+            <div class="tag-pill">React.js</div>
+            <div class="tag-pill">TailwindCSS</div>
+            <div class="tag-pill">Bootstrap5</div>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3><a href="https://github.com/sharad01-ops/Grocery-webapp" target="_blank">Grocery Webapp</a></h3>
+          <p>Flask-powered grocery management system enabling easy item tracking, data persistence, and clean front-end
+            integration using HTML, CSS, and JS.</p>
+          <div class="project-tags">
+            <div class="tag-pill">Flask</div>
+            <div class="tag-pill">HTML</div>
+            <div class="tag-pill">CSS</div>
+            <div class="tag-pill">JavaScript</div>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3><a href="https://github.com/sharad01-ops/Bank-Management" target="_blank">Bank Management</a></h3>
+          <p>Python OOP-based desktop simulation that handles customer data and transactions efficiently, demonstrating
+            logical structure and modular design.</p>
+          <div class="project-tags">
+            <div class="tag-pill">Python</div>
+            <div class="tag-pill">OOP</div>
+            <div class="tag-pill">Streamlit</div>
+          </div>
+        </div>
         <div class="project-card">
           <h3><a href="https://github.com/sharad01-ops/FoodIngo" target="_blank">FoodIngo</a></h3>
           <p>A full-stack food delivery platform offering secure ordering, real-time tracking, and a modern responsive
@@ -805,7 +1004,7 @@ const me = {
     <div class="contact-center">
       <div class="contact-buttons">
         <a class="btn btn-primary"
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=sharad.jha01@gmail.com&su=Collaboration%20Opportunity&body=Hi%20Sharad,"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=sharad.jha01@gmail.com&su=Job%20Opportunity&body=Hi%20Sharad,"
           target="_blank">
           <i class="fa-solid fa-envelope"></i> Hire Me
         </a>
