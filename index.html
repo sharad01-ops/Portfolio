@@ -547,6 +547,19 @@
       border-top: 1px solid var(--card-border);
     }
 
+    footer p {
+      margin: 0.3rem 0;
+    }
+
+    .footer-sub {
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
     #cursor {
       position: fixed;
       left: 0;
@@ -668,6 +681,9 @@
 
       .cta-row {
         gap: 0.8rem;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+        overflow-x: auto;
       }
 
       .btn {
@@ -779,8 +795,10 @@
       .btn {
         width: 100%;
         justify-content: center;
-        padding: 0.8rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+
       }
 
       /* Code card for small mobile */
@@ -946,7 +964,13 @@
           <a class="btn btn-ghost" href="#contact">
             <i class="fa-solid fa-paper-plane"></i> Get in Touch
           </a>
+          <a class="btn btn-primary garage-btn" href="https://retro-garage.vercel.app/" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fa-solid fa-car"></i> My Garage *
+          </a>
+
         </div>
+
       </div>
       <div class="hero-right">
         <div class="card">
@@ -1184,12 +1208,16 @@ const me = {
         <a class="btn btn-ghost" href="https://linkedin.com/in/sharad-jha01" target="_blank">
           <i class="fa-brands fa-linkedin"></i> LinkedIn
         </a>
+
       </div>
     </div>
   </section>
 
   <footer>
     <p>Sharad Jha — Built with clarity ✨</p>
+    <p class="footer-sub">
+       (*  The start of something real <i class="fa-solid fa-laptop-code "></i>)
+    </p>
   </footer>
 
   <div id="cursor"></div>
